@@ -15,6 +15,10 @@
                     <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.index')">
                         {{ __('記事一覧') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('blog.detail')" :active="request()->routeIs('blog.detail')">
+                        {{ __('記事詳細') }}
+                    </x-nav-link>
                 </div>
             </div>
 

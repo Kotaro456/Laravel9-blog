@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('blog.index');
 })->middleware(['auth'])->name('blog.index');
 
+Route::get('/blog/detail', function () {
+    return view('blog.detail');
+})->middleware(['auth'])->name('blog.detail');
+
 require __DIR__.'/auth.php';
