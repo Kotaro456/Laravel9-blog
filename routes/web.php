@@ -21,4 +21,18 @@ Route::get('/blog/detail', function () {
     return view('blog.detail');
 })->middleware(['auth'])->name('blog.detail');
 
+Route::get('/admin/blog/new', function () {
+    return view('admin.blog.new');
+})->middleware(['auth'])->name('admin.blog.new');
+
+Route::post('/admin/blog/create', function () {
+    return view('admin.blog.new');
+})->middleware(['auth'])->name('admin.blog.create');
+
+
+Route::get('/admin/index', function () {
+    return view('admin.index');
+})->middleware(['auth'])->name('admin.index');
+
+
 require __DIR__.'/auth.php';
