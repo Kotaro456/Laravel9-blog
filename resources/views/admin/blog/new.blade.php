@@ -13,21 +13,21 @@
 
     <div class="py-12">
         <div class="container mx-auto px-4">
-            <form action="{{ route('admin.blog.create') }}" method="post" class="flex flex-col justify-center">
-                <div class="w-1/2">
+            <form action="{{ route('admin.blog.create') }}" method="post" class="flex flex-col items-center justify-center w-1/2 mx-auto">
+                <div class="w-full">
                     <label class="block font-semibold" for="title-input">記事タイトル</label>
-                    <input type="text" name="title" id="title-input" class="mt-4" />
+                    <input type="text" name="title" id="title-input" class="mt-4 w-full rounded-lg border-none" />
                 </div>
 
-                <div class="mt-10 w-1/2">
+                <div class="mt-10 w-full">
                     <label class="block font-semibold" for="body-input">記事本文</label>
-                    <textarea id="body-input" class="mt-4">
-                    </textarea>
+                    <textarea id="body-input" class="mt-4 w-full rounded-lg border-none" rows="15" cols="60"></textarea>
                 </div>
 
 
-                <button class="box-border text-center rounded-lg h-8 w-24
-                    bg-slate-50 text-sky-500 border-sky-600 border-2 leading-7 block mt-4">
+                <button class="box-border text-center rounded-lg h-12 w-32
+                    bg-slate-50 text-sky-500 border-sky-600 border-2 leading-7 block mt-4 ml-auto
+                    hover:bg-sky-500 hover:text-slate-50">
                     投稿
                 </button>
             </form>
