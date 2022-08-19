@@ -1,13 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('記事管理') }}
+            {{ __('新規作成') }}
         </h2>
-
-        <a class="box-border text-center rounded-lg h-8 w-24
-        bg-slate-50 text-sky-500 border-sky-600 border-2 leading-7 block">
-            新規作成
-        </a>
     </x-slot>
 
 

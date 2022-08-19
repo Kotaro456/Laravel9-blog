@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,7 @@ Route::get('/admin/blog/new', function () {
     return view('admin.blog.new');
 })->middleware(['auth'])->name('admin.blog.new');
 
-Route::post('/admin/blog/create', function () {
-    return view('admin.blog.new');
-})->middleware(['auth'])->name('admin.blog.create');
+Route::post('/admin/blog/create', [BlogController::class, 'create'])->middleware(['auth'])->name('admin.blog.create');
 
 
 Route::get('/admin/index', function () {
