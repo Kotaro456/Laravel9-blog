@@ -9,6 +9,7 @@
     <div class="py-12">
         <div class="container mx-auto px-4">
             <form action="{{ route('admin.blog.create') }}" method="post" class="flex flex-col items-center justify-center w-1/2 mx-auto">
+                @csrf
                 <div class="w-full">
                     <label class="block font-semibold" for="title-input">記事タイトル</label>
                     <input type="text" name="title" id="title-input" class="mt-4 w-full rounded-lg border-none" />
@@ -16,7 +17,7 @@
 
                 <div class="mt-10 w-full">
                     <label class="block font-semibold" for="body-input">記事本文</label>
-                    <textarea id="body-input" class="mt-4 w-full rounded-lg border-none" rows="15" cols="60"></textarea>
+                    <textarea id="body-input" name="body" class="mt-4 w-full rounded-lg border-none" rows="15" cols="60"></textarea>
                 </div>
 
 
