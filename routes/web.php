@@ -23,8 +23,11 @@ Route::get('/blog/detail', function () {
 Route::get('/admin/blog/new', function () {
     return view('admin.blog.new');
 })->middleware(['auth'])->name('admin.blog.new');
-
 Route::post('/admin/blog/create', [BlogController::class, 'create'])->middleware(['auth'])->name('admin.blog.create');
+
+Route::get('/admin/blog/edit/{id}',  [BlogController::class, 'edit'])->middleware(['auth'])->name('admin.blog.edit');
+Route::post('/admin/blog/update/{id}', [BlogController::class, 'update'])->middleware(['auth'])->name('admin.blog.update');
+
 
 
 Route::get('/admin/index',[BlogController::class, 'index'])->middleware(['auth'])->name('admin.index');

@@ -23,8 +23,11 @@
                         </div>
 
                         <div class="flex justify-between w-10/12">
-                            <a class="box-border block text-center rounded-lg h-8 w-12
-                            bg-slate-50 text-indigo-600 border-indigo-500 border-2 leading-7">
+                            <a
+                                class="box-border block text-center rounded-lg h-8 w-12
+                                bg-slate-50 text-indigo-600 border-indigo-500 border-2 leading-7"
+                                href="{{ route('admin.blog.edit', ['id' => $blog->id]) }}"
+                            >
                                 編集
                             </a>
                             <a class="box-border block text-center rounded-lg h-8 w-12

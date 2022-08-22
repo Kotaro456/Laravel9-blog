@@ -11,7 +11,7 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs = Blog::where('user_id',Auth::id())->get();
+        $blogs = Blog::where('user_id', Auth::id())->get();
 
         return view('admin.index', ['blogs' => $blogs]);
     }
@@ -27,6 +27,30 @@ class BlogController extends Controller
             'title' => $request->title,
             'body' => $request->body,
             'user_id' => $user->id,
+        ]);
+
+        return redirect()->route('admin.index');
+    }
+
+    /**
+     * @param Request $request
+     * @param integer $id
+     */
+    public function edit(Request $request, $id)
+    {
+        return view('admin.blog.edit', ['blog' => Blog::find($id)]);
+    }
+
+    /**
+     * @param Request $request
+     * @param integer $id
+     */
+    public function update(Request $request, $id)
+    {
+        $blog = Blog::find($id);
+        $blog->update([
+            'title' => $request->title,
+            'body' => $request->body,
         ]);
 
         return redirect()->route('admin.index');
