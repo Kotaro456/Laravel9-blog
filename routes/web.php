@@ -14,9 +14,7 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::get('/', function () {
-    return view('blog.index');
-})->middleware(['auth'])->name('blog.index');
+Route::get('/', [BlogController::class, 'index'])->middleware(['auth'])->name('blog.index');
 
 Route::get('/blog/detail', function () {
     return view('blog.detail');
@@ -29,9 +27,7 @@ Route::get('/admin/blog/new', function () {
 Route::post('/admin/blog/create', [BlogController::class, 'create'])->middleware(['auth'])->name('admin.blog.create');
 
 
-Route::get('/admin/index', function () {
-    return view('admin.index');
-})->middleware(['auth'])->name('admin.index');
+Route::get('/admin/index',[BlogController::class, 'index'])->middleware(['auth'])->name('admin.index');
 
 
 require __DIR__.'/auth.php';
