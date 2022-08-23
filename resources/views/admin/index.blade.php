@@ -30,8 +30,11 @@
                             >
                                 編集
                             </a>
-                            <a class="box-border block text-center rounded-lg h-8 w-12
-                            bg-slate-50 border-rose-700 text-rose-600 border-2 leading-7">
+                            <a
+                                class="box-border block text-center rounded-lg h-8 w-12
+                                bg-slate-50 border-rose-700 text-rose-600 border-2 leading-7"
+                                href="{{ route('admin.blog.delete', ['id' => $blog->id]) }}"
+                            >
                                 削除
                             </a>
                         </div>

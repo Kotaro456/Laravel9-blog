@@ -28,6 +28,7 @@ Route::post('/admin/blog/create', [BlogController::class, 'create'])->middleware
 Route::get('/admin/blog/edit/{id}',  [BlogController::class, 'edit'])->middleware(['auth'])->name('admin.blog.edit');
 Route::post('/admin/blog/update/{id}', [BlogController::class, 'update'])->middleware(['auth'])->name('admin.blog.update');
 
+Route::get('/admin/blog/delete/{id}', [BlogController::class, 'destroy'])->middleware(['auth'])->name('admin.blog.delete');
 
 
 Route::get('/admin/index',[BlogController::class, 'index'])->middleware(['auth'])->name('admin.index');

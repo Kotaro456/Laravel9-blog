@@ -55,4 +55,15 @@ class BlogController extends Controller
 
         return redirect()->route('admin.index');
     }
+
+    /**
+     * @param Request $request
+     * @param integer $id
+     */
+    public function destroy(Request $request, $id)
+    {
+        $blog = Blog::destroy($id);
+        return redirect()->route('admin.index');
+    }
+
 }
