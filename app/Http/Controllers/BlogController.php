@@ -8,8 +8,14 @@ use App\Models\Blog;
 
 class BlogController extends Controller
 {
-
     public function index()
+    {
+        $blogs = Blog::all();
+
+        return view('blog.index', ['blogs' => $blogs]);
+    }
+
+    public function admin_index()
     {
         $blogs = Blog::where('user_id', Auth::id())->get();
 
