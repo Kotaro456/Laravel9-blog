@@ -15,6 +15,17 @@ class BlogController extends Controller
         return view('blog.index', ['blogs' => $blogs]);
     }
 
+    /**
+     * @param Request $request
+     * @param integer $id
+     */
+    public function detail ($id)
+    {
+        $blog = Blog::find($id);
+
+        return view('blog.detail', ['blog' => $blog]);
+    }
+
     public function admin_index()
     {
         $blogs = Blog::where('user_id', Auth::id())->get();

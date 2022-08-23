@@ -16,10 +16,6 @@
                         {{ __('記事一覧') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('blog.detail')" :active="request()->routeIs('blog.detail')">
-                        {{ __('記事詳細') }}
-                    </x-nav-link>
-
                     <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
                         {{ __('記事管理') }}
                     </x-nav-link>

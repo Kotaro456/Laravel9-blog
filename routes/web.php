@@ -16,9 +16,7 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/', [BlogController::class, 'index'])->middleware(['auth'])->name('blog.index');
 
-Route::get('/blog/detail', function () {
-    return view('blog.detail');
-})->middleware(['auth'])->name('blog.detail');
+Route::get('/blog/detail/{id}', [BlogController::class, 'detail'])->middleware(['auth'])->name('blog.detail');
 
 Route::get('/admin/blog/new', function () {
     return view('admin.blog.new');
