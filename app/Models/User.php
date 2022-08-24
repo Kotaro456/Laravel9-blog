@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * ブログポストのコメントを取得
+     */
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

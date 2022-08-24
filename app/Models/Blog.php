@@ -19,4 +19,12 @@ class Blog extends Model
         'body',
         'user_id'
     ];
+
+    /**
+     * ブログ記事を所有しているユーザーを取得
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -29,7 +29,7 @@ Route::post('/admin/blog/update/{id}', [BlogController::class, 'update'])->middl
 Route::get('/admin/blog/delete/{id}', [BlogController::class, 'destroy'])->middleware(['auth'])->name('admin.blog.delete');
 
 
-Route::get('/admin/index',[BlogController::class, 'index'])->middleware(['auth'])->name('admin.index');
+Route::get('/admin/index',[BlogController::class, 'admin_index'])->middleware(['auth'])->name('admin.index');
 
 
 require __DIR__.'/auth.php';

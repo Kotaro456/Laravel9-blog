@@ -23,7 +23,9 @@ class BlogController extends Controller
     {
         $blog = Blog::find($id);
 
-        return view('blog.detail', ['blog' => $blog]);
+        $blogsFromAuthor = Blog::where('user_id', $blog->user->id)->get()->except([$blog->id]);
+
+        return view('blog.detail', ['blog' => $blog, 'blogsFromAuthor' => $blogsFromAuthor]);
     }
 
     public function admin_index()
