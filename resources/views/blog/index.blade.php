@@ -16,7 +16,7 @@
                             <div class="h-full grid place-items-center">
                                 <div>
                                     <p>{{ $blog->title  }}</p>
-                                    <p>著者</p>
+                                    <p>{{ $blog->user->name }}</p>
                                 </div>
                             </div>
                         </div>
